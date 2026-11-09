@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 10, 20, 30, 40, 50, 60 };
+
+        int target = 40;
+
+        int low = 0;
+        int high = arr.Length - 1;
+
+        while (low <= high)
+        {
+            int mid = (low + high) / 2;
+
+            if (arr[mid] == target)
+            {
+                Console.WriteLine("Found at index: " + mid);
+                return;
+            }
+            else if (arr[mid] < target)
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                high = mid - 1;
+            }
+        }
+
+        Console.WriteLine("Not Found");
+    }
+}
